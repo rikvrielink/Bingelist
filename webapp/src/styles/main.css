@@ -1,0 +1,12 @@
+a, a:hover {
+  text-decoration: none; }
+
+.app-header {
+  background-color: #f3f3f3; }
+
+.app-menu .menu-item {
+  text-align: center; }
+  .app-menu .menu-item i {
+    display: block; }
+
+/*# sourceMappingURL=main.css.map */

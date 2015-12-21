@@ -9,6 +9,8 @@
   "moduleType": [],
   "license": "MIT",
   "dependencies": {
-    "angular": "~1.4.8"
+    "angular": "1.4.x",
+    "angular-route": "1.4.x",
+    "restangular": "1.5.x"
   }
 }

@@ -1,89 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" ng-app="BingeList">
 <head>
+    <base href="/">
+    <title>BingeList {{APP.VERSION}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ=="
           crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- injector:css -->
+    <link rel="stylesheet" href="/css/main.css">
     <!-- endinjector -->
 
 </head>
 <body>
-<div class="container">
-    <h1>Project Murgleburp</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12" ng-include="'/templates/header.html'"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1" ng-include="'/templates/menu.html'"></div>
+        <div class="col-sm-12" ng-view></div>
 
-    <p>TEST</p>
-
-    <p>
-        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-        <button type="button" class="btn btn-primary">Primary</button>
-
-        <!-- Secondary, outline button -->
-        <button type="button" class="btn btn-secondary">Secondary</button>
-
-        <!-- Indicates a successful or positive action -->
-        <button type="button" class="btn btn-success">Success</button>
-
-        <!-- Contextual button for informational alert messages -->
-        <button type="button" class="btn btn-info">Info</button>
-
-        <!-- Indicates caution should be taken with this action -->
-        <button type="button" class="btn btn-warning">Warning</button>
-
-        <!-- Indicates a dangerous or potentially negative action -->
-        <button type="button" class="btn btn-danger">Danger</button>
-    </p>
-    <p>
-        <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-        <button type="button" class="btn btn-link">Link</button>
-        <button type="button" class="btn btn-primary-outline">Primary</button>
-        <button type="button" class="btn btn-secondary-outline">Secondary</button>
-        <button type="button" class="btn btn-success-outline">Success</button>
-        <button type="button" class="btn btn-info-outline">Info</button>
-        <button type="button" class="btn btn-warning-outline">Warning</button>
-        <button type="button" class="btn btn-danger-outline">Danger</button>
-    </p>
-    <p>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-        </tbody>
-    </table>
-    </p>
+    </div>
 </div>
 
 <!-- injector:js -->
 <script src="/angular/angular.js"></script>
+<script src="/angular-route/angular-route.js"></script>
+<script src="/lodash/lodash.js"></script>
+<script src="/restangular/dist/restangular.js"></script>
+<script src="/webapp.js"></script>
+<script src="/webapp.const.js"></script>
+<script src="/controller/home.controller.js"></script>
+<script src="/service/list.service.js"></script>
 <!-- endinjector -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"
-        integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
-        crossorigin="anonymous"></script>
 </body>
 </html>
