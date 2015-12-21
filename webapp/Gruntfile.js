@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         },
 
         clean: {
-            all: ['<%= dirs.dist %>', '<%= dirs.temp %>'],
+            all: ['<%= dirs.dist %>', '<%= dirs.tmp %>'],
             dist: '<%= dirs.dist %>',
             temp: '<%= dirs.tmp %>'
         },
@@ -21,7 +21,7 @@ module.exports = function (grunt) {
             },
             app: {
                 options: {
-                    ignorePath: ['bower_components', 'src', '.tmp']
+                    ignorePath: ['bower_components', '<%= dirs.src %>', '.tmp']
                 },
                 files: [{
                     expand: true,
@@ -32,16 +32,16 @@ module.exports = function (grunt) {
                     src: ['bower.json']
                 }, {
                     expand: true,
-                    cwd: 'webapp',
-                    src: ['**/index.js', '**/*.js']
+                    cwd: '<%= dirs.src %>',
+                    src: ['webapp.js','webapp.const.js','**/*.js']
                 }]
             }
 
         },
         watch: {
             express: {
-                files: ['<%= dirs.src %>/**/*.js', '<%= dirs.src %>/styles/**/*.scss'],
-                tasks: ['express'],
+                files: ['bower.json','<%= dirs.src %>/**/*.html','<%= dirs.src %>/**/*.js', '<%= dirs.src %>/styles/**/*.scss'],
+                tasks: ['develop'],
                 options: {
                     spawn: false // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions. Without this option specified express won't be reloaded
                 }
