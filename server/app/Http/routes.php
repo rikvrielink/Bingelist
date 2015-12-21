@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
+
+	header("Access-Control-Allow-Origin: *");
+	header('Access-Control-Allow-Credentials: true');
+
+	Route::post('list/{category}', 'ListController@store');
+	Route::resource('list', 'ListController', [
+		'only' => [
+			'show'
+		]
+	]);
 });
