@@ -53,7 +53,7 @@ class ListController extends ApiController {
 				break;
 		}
 
-		return response()->make([], 204);
+		return response('', 204);
 	}
 
 	/**
