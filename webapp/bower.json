@@ -1,0 +1,14 @@
+{
+  "name": "Bingelist",
+  "homepage": "https://github.com/rikvrielink/Bingelist",
+  "authors": [
+    "Rik Vrielink <rikvrielink@hotmail.com>"
+  ],
+  "description": "The bingeList",
+  "main": "src/index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
