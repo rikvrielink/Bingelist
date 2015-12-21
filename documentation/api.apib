@@ -4,39 +4,14 @@
     + category (string) - The category of the items as a string
   + Response 200 (application/json)
     + Body
-      {
-       "category":"movies",
-       "items":[
-          {
-             "id":"1",
-             "properties":[
-                {
-                   "name":"Human Centipede",
-                   "year":2009
-                }
-             ]
-          },
-          {
-             "id":"2",
-             "properties":[
-                {
-                   "name":"Human Centipede 2",
-                   "year":2011
-                }
-             ]
-          }
-       ]
-      }
+        {"category":"movies","items":[{"id":"1","properties":[{"name":"Human Centipede","year":2009}]},{"id":"2","properties":[{"name":"Human Centipede 2","year":2011}]}]}
 
+  + Response 404
 ## POST
+  + Parameters
+    + category (string) - The category of the items as a string
   + Request (application/json)
     + Body
-      {
-         "properties":[
-            {
-               "name":"Human Centipede",
-               "year":2009
-            }
-         ]
-      }
-  + Response 204 (application/json)
+      {"properties":[{"name":"Human Centipede","year":2009}]}
+  + Response 204
+  + Response 400
