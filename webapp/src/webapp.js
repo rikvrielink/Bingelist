@@ -2,7 +2,7 @@ var app = angular.module('BingeList', ['ngRoute', 'restangular']);
 
 app.config(function (RestangularProvider, $locationProvider, $routeProvider, CONFIG) {
     'use strict';
-    RestangularProvider.setBaseUrl('http://'+CONFIG.BACKEND_URL+'/Bingelist/server/public/api');
+    RestangularProvider.setBaseUrl(CONFIG.BACKEND_URL+ '/api');
     $locationProvider.html5Mode(true).hashPrefix('!');
     $routeProvider.when('/', {
         controller: 'IndexController',
@@ -11,9 +11,7 @@ app.config(function (RestangularProvider, $locationProvider, $routeProvider, CON
 });
 
 
-app.run(function ($rootScope) {
+app.run(function ($rootScope, CONFIG) {
     'use strict';
-    $rootScope.APP = {
-        VERSION: '0.1'
-    };
+    $rootScope.CONFIG = CONFIG;
 });

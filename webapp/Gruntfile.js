@@ -33,17 +33,24 @@ module.exports = function (grunt) {
                 }, {
                     expand: true,
                     cwd: '<%= dirs.src %>',
-                    src: ['webapp.js','webapp.const.js','**/*.js']
+                    src: ['webapp.js', 'webapp.const.js', '**/*.js']
                 }]
             }
 
         },
         watch: {
             express: {
-                files: ['bower.json','<%= dirs.src %>/**/*.html','<%= dirs.src %>/**/*.js', '<%= dirs.src %>/styles/**/*.scss'],
+                files: ['bower.json', '<%= dirs.src %>/**/*.html', '<%= dirs.src %>/**/*.js'],
                 tasks: ['develop'],
                 options: {
                     spawn: false // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions. Without this option specified express won't be reloaded
+                }
+            },
+            css: {
+                files: ['<%= dirs.src %>/styles/**/*.scss'],
+                tasks: ['compass:server'],
+                options: {
+                    livereload: true
                 }
             }
         },
